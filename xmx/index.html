@@ -14,7 +14,7 @@
 ></script>
   
 <script>
-  window.googlePixelId = "68e3c9c7a2ea0ad818ce7597";
+  window.googlePixelId = "6902bf1a7d07a23063c4885b";
   var a = document.createElement("script");
   a.setAttribute("async", "");
   a.setAttribute("defer", "");
@@ -140,7 +140,7 @@
     footer {
       position: relative;
       z-index: 1;
-      margin-top: -30px; /* sobreposição com a listra amarela */
+      margin-top: -30px;
       background: #2c2c2c;
       color: rgba(255,255,255,0.9);
       padding: 40px 24px;
@@ -236,25 +236,30 @@
   </style>
 
   <!-- VTurb performance & preloads -->
-  <script>
-    (function(i, n) {
-      try {
-        i._plt = i._plt || (n && n.timeOrigin ? n.timeOrigin + n.now() : Date.now());
-      } catch (e) {
-        i._plt = Date.now();
-      }
-    })(window, window.performance || {});
-  </script>
-  <link rel="preload" href="https://scripts.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/players/6917691698db0a5ed75f2862/v4/player.js" as="script">
-  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-  <link rel="preload" href="https://cdn.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/690c16202464ff08d6f1d674/main.m3u8" as="fetch">
-  <link rel="dns-prefetch" href="https://cdn.converteai.net">
-  <link rel="dns-prefetch" href="https://scripts.converteai.net">
-  <link rel="dns-prefetch" href="https://images.converteai.net">
-  <link rel="dns-prefetch" href="https://api.vturb.com.br">
+<script>
+!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);
+</script>
 
-  <!-- Componente web VTurb -->
-  <script src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" async></script>
+<link rel="preload" 
+      href="https://scripts.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/players/6917ee97a9e1550a6576befb/v4/player.js" 
+      as="script">
+
+<link rel="preload" 
+      href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" 
+      as="script">
+
+<link rel="preload" 
+      href="https://cdn.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/6917ee97a9e1550a6576befb/main.m3u8" 
+      as="fetch">
+
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://api.vturb.com.br">
+
+<!-- Componente web VTurb -->
+<script src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" async></script>
+
 </head>
 <body>
 
@@ -285,9 +290,9 @@
     </div>
 
     <div class="vsl-wrapper">
-      <!-- VSL VTurb -->
-      <vturb-smartplayer
-        id="vid-6917691698db0a5ed75f2862"
+      <!-- VSL VTurb NOVO -->
+      <vturb-smartplayer 
+        id="vid-6917ee97a9e1550a6576befb"
         style="display:block; margin:0 auto; width:100%; max-width:400px;">
       </vturb-smartplayer>
     </div>
@@ -299,19 +304,18 @@
     <div class="spacer"></div>
   </div>
 
-  <!-- Faixa amarela + logos -->
   <div class="brand-strip">
     <img src="images/tuasaude.png" alt="Tua Saúde">
     <img src="images/drauzio.png" alt="Drauzio Varella">
     <img src="images/vivabem.png" alt="VivaBem UOL">
   </div>
 
-  <!-- Loader oficial do player VTurb -->
+  <!-- Loader do player VTurb NOVO -->
   <script type="text/javascript">
     function loadVturbPlayer() {
       try {
         var s = document.createElement("script");
-        s.src = "https://scripts.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/players/6917691698db0a5ed75f2862/v4/player.js";
+        s.src = "https://scripts.converteai.net/60b2de82-89bd-4e79-a03f-d206fb6f5a6b/players/6917ee97a9e1550a6576befb/v4/player.js";
         s.async = true;
         document.head.appendChild(s);
       } catch (e) {
@@ -320,7 +324,7 @@
     }
   </script>
 
-  <!-- Scripts da página -->
+  <!-- Scripts gerais -->
   <script>
     function safeFetch(url, options) {
       if (typeof fetch !== 'function') {
@@ -342,7 +346,7 @@
         el.innerHTML = `<span id='viewersNumber' style='color:#b30000; font-weight:700;'>${current}</span> pessoas de <span id='viewerCity'>${city}</span> estão assistindo agora.`;
 
         setInterval(() => {
-          const variation = Math.floor(Math.random() * 11) - 5; // -5 a +5
+          const variation = Math.floor(Math.random() * 11) - 5;
           current = Math.min(999, Math.max(500, current + variation));
           el.innerHTML = `<span id='viewersNumber' style='color:#b30000; font-weight:700;'>${current}</span> pessoas de <span id='viewerCity'>${city}</span> estão assistindo agora.`;
         }, 2500);
@@ -367,9 +371,9 @@
         const now = new Date();
 
         const date = new Date(now);
-        date.setDate(date.getDate() - 1); // dia anterior
+        date.setDate(date.getDate() - 1);
 
-        const time = new Date(now.getTime() - (60 + 20) * 60000); // 1h20 antes
+        const time = new Date(now.getTime() - (60 + 20) * 60000);
         const hh = String(time.getHours()).padStart(2, '0');
         const mm = String(time.getMinutes()).padStart(2, '0');
 
